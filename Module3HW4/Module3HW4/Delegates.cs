@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-namespace Module3HW4
+﻿namespace Module3HW4
 {
     public class Delegates
     {
@@ -18,13 +16,13 @@ namespace Module3HW4
         {
             int sum = 0;
 
-            foreach (var item in DoSum.GetInvocationList())
-            {
-                sum += Convert.ToInt32(item.DynamicInvoke(2, 6));
-            }
-
             try
             {
+                foreach (var item in DoSum.GetInvocationList())
+                {
+                    sum += Convert.ToInt32(item.DynamicInvoke(2, 6));
+                }
+
                 showMessage($"The result: {sum}");
             }
             catch (Exception ex)
